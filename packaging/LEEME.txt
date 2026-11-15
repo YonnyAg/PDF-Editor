@@ -1,0 +1,28 @@
+PDF Editor 0.1.0-preview.1 — Windows 11 x64
+
+Versión preliminar para evaluación. Revisa las copias guardadas antes de
+compartirlas y conserva los originales. Las limitaciones de cada operación
+se explican en la interfaz y en las notas de versión.
+
+Instalación: ejecuta el instalador. No requiere permisos de administrador.
+Portátil: extrae el ZIP completo en una carpeta y abre pdf_editor.exe.
+No se puede separar el ejecutable de sus DLL y carpetas.
+Los idiomas del OCR deben estar instalados en Windows.
+
+La sesión, los documentos recientes y las copias de recuperación se almacenan
+en los datos locales del usuario (PDFEditor/PDF Editor/sessions). La edición
+portátil también utiliza esos datos; no es un modo que guarde todo en el USB.
+Para una sesión independiente: pdf_editor.exe --profile "ruta a otra sesión".
+La desinstalación conserva documentos y datos locales de recuperación.
+
+Esta edición no lleva firma Authenticode; Windows puede mostrar una advertencia
+de editor desconocido. No se publica una identidad de editor verificada.
+Compara SHA256SUMS.txt con Get-FileHash antes de compartir los artefactos.
+
+Código propio e icono: MIT. Las bibliotecas y recursos conservan sus licencias.
+Consulta LICENSE, THIRD_PARTY_NOTICES.md y licenses/ dentro de la aplicación.
+El paquete de fuentes de dependencias acompaña a esta versión. Se permite
+reemplazar las DLL de Qt por versiones compatibles y depurar modificaciones
+de esas bibliotecas conforme a sus licencias.
+
+No se ha publicado esta edición en GitHub ni Microsoft Store.

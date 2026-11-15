@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.25)
+project(PdfEditorIconGenerator LANGUAGES CXX)
+find_package(Qt6 6.9 REQUIRED COMPONENTS Gui Svg)
+add_executable(pdf_editor_icons main.cpp)
+target_link_libraries(pdf_editor_icons PRIVATE Qt6::Gui Qt6::Svg)

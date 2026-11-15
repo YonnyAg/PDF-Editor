@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "PDF Editor: build and test (Debug)",
+      "type": "shell",
+      "command": "& '${workspaceFolder}/scripts/build.ps1'",
+      "args": ["-Configuration", "Debug"],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "shell": {
+          "executable": "powershell.exe",
+          "args": ["-NoProfile", "-Command"]
+        }
+      },
+      "group": {"kind": "build", "isDefault": true},
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "PDF Editor: run (Debug)",
+      "type": "shell",
+      "command": "& '${workspaceFolder}/scripts/run.ps1'",
+      "args": ["-Configuration", "Debug"],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "shell": {
+          "executable": "powershell.exe",
+          "args": ["-NoProfile", "-Command"]
+        }
+      },
+      "problemMatcher": "$msCompile"
+    }
+  ]
+}

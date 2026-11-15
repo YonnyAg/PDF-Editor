@@ -1,0 +1,16 @@
+{
+  "pdf4qt": {
+    "repository": "https://github.com/JakubMelka/PDF4QT.git",
+    "tag": "v1.6.0.0",
+    "revision": "23f3829ae0420da801824a0d53d82c53baa2bee9"
+  },
+  "vcpkg": {
+    "repository": "https://github.com/microsoft/vcpkg.git",
+    "revision": "ef7dbf94b9198bc58f45951adcf1f041fcbc5ea0"
+  },
+  "qt": {
+    "version": "6.9.3",
+    "architecture": "win64_msvc2022_64"
+  },
+  "aqtinstall": "3.3.0"
+}

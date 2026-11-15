@@ -1,0 +1,84 @@
+diff --git a/Pdf4QtLibCore/sources/pdfnametreeloader.h b/Pdf4QtLibCore/sources/pdfnametreeloader.h
+index d351fec..977742e 100644
+--- a/Pdf4QtLibCore/sources/pdfnametreeloader.h
++++ b/Pdf4QtLibCore/sources/pdfnametreeloader.h
+@@ -24,9 +24,11 @@
+ #define PDFNAMETREELOADER_H
+ 
+ #include "pdfdocument.h"
++#include "pdfexception.h"
+ 
+ #include <map>
+ #include <functional>
++#include <set>
+ 
+ namespace pdf
+ {
+@@ -49,21 +51,43 @@ public:
+     static MappedObjects parse(const PDFObjectStorage* storage, const PDFObject& root, const LoadMethod& loadMethod)
+     {
+         MappedObjects result;
+-        parseImpl(result, storage, root, loadMethod);
++        // PDF Editor: bound name-tree traversal before catalog initialization.
++        std::set<const PDFDictionary*> visited;
++        size_t nodes = 0;
++        size_t items = 0;
++        parseImpl(result, storage, root, loadMethod, visited, nodes, items, 0);
+         return result;
+     }
+ 
+ private:
+-    static void parseImpl(MappedObjects& objects, const PDFObjectStorage* storage, const PDFObject& root, const LoadMethod& loadMethod)
++    static void parseImpl(MappedObjects& objects, const PDFObjectStorage* storage, const PDFObject& root, const LoadMethod& loadMethod,
++                          std::set<const PDFDictionary*>& visited, size_t& nodes, size_t& items, size_t depth)
+     {
++        if (depth > 64 || ++nodes > 100000)
++        {
++            throw PDFException(QStringLiteral("Name tree exceeds traversal limits."));
++        }
+         if (const PDFDictionary* dictionary = storage->getDictionaryFromObject(root))
+         {
++            if (!visited.insert(dictionary).second)
++            {
++                throw PDFException(QStringLiteral("Name tree contains a cycle or a repeated node."));
++            }
+             // Jakub Melka: First, load the objects into the map
+             const PDFObject& namedItems = storage->getObject(dictionary->get("Names"));
+             if (namedItems.isArray())
+             {
+                 const PDFArray* namedItemsArray = namedItems.getArray();
++                if (namedItemsArray->getCount() % 2 != 0)
++                {
++                    throw PDFException(QStringLiteral("Name tree has an incomplete key/value pair."));
++                }
+                 const size_t count = namedItemsArray->getCount() / 2;
++                if (count > 100000 - items)
++                {
++                    throw PDFException(QStringLiteral("Name tree exceeds the item limit."));
++                }
++                items += count;
+                 for (size_t i = 0; i < count; ++i)
+                 {
+                     const size_t numberIndex = 2 * i;
+@@ -75,7 +99,11 @@ private:
+                         continue;
+                     }
+ 
+-                    objects[name.getString()] = loadMethod(storage, namedItemsArray->getItem(valueIndex));
++                    if (objects.contains(name.getString()))
++                    {
++                        throw PDFException(QStringLiteral("Name tree contains a duplicate key."));
++                    }
++                    objects.emplace(name.getString(), loadMethod(storage, namedItemsArray->getItem(valueIndex)));
+                 }
+             }
+ 
+@@ -87,7 +115,7 @@ private:
+                 const size_t count = kidsArray->getCount();
+                 for (size_t i = 0; i < count; ++i)
+                 {
+-                    parseImpl(objects, storage, kidsArray->getItem(i), loadMethod);
++                    parseImpl(objects, storage, kidsArray->getItem(i), loadMethod, visited, nodes, items, depth + 1);
+                 }
+             }
+         }

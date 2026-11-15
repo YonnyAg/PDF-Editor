@@ -1,0 +1,13 @@
+PDF Editor — privacidad de esta versión preliminar
+
+La edición, extracción, OCR y guardado se realizan localmente. La aplicación
+no incorpora cuentas, publicidad, telemetría ni actualización automática.
+Guarda localmente rutas recientes, la sesión y copias de recuperación.
+Las copias de recuperación pueden contener el contenido de tus documentos;
+protege tu cuenta de Windows y el almacenamiento del equipo.
+Imprimir utiliza la cola y el controlador de impresión elegidos por el usuario.
+Las herramientas de firma utilizan el certificado elegido y la comprobación
+local implementada; no se ofrece validación con sellado de tiempo remoto.
+No se deben compartir contraseñas, certificados PFX/P12 ni documentos privados
+en incidencias. Esta declaración describe el ejecutable, no el comportamiento
+de controladores, servicios de Windows u otras aplicaciones.

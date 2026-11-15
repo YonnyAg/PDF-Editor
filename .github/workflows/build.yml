@@ -1,0 +1,43 @@
+name: Build and test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-2022
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        configuration: [Debug, Release]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.9.3'
+          arch: win64_msvc2022_64
+          archives: qtbase qtsvg qttools
+          cache: true
+
+      - name: Prepare pinned source dependencies
+        shell: pwsh
+        run: ./scripts/setup-dependencies.ps1 -SkipQt
+
+      - name: Cache native dependencies
+        uses: actions/cache@v4
+        with:
+          path: .tools/vcpkg_installed
+          key: windows-native-${{ hashFiles('vcpkg.json', 'vcpkg-configuration.json', 'dependencies.json') }}
+
+      - name: Configure, build and test
+        shell: pwsh
+        run: ./scripts/build.ps1 -Configuration ${{ matrix.configuration }} -QtRoot "$env:QT_ROOT_DIR"

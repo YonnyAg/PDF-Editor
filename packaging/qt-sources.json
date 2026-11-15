@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "qtbase-everywhere-src-6.9.3.tar.xz",
+    "SHA256": "C5A1A2F660356EC081FEBFA782998AE5DDBC5925117E64F50E4BE9CD45B8DC6E",
+    "Url": "https://download.qt.io/archive/qt/6.9/6.9.3/submodules/qtbase-everywhere-src-6.9.3.tar.xz"
+  },
+  {
+    "Name": "qtsvg-everywhere-src-6.9.3.tar.xz",
+    "SHA256": "DB76AA3358CBBE6FCE7DA576FF4669CB9801920188C750D3B12783BBE97026E2",
+    "Url": "https://download.qt.io/archive/qt/6.9/6.9.3/submodules/qtsvg-everywhere-src-6.9.3.tar.xz"
+  },
+  {
+    "Name": "qttranslations-everywhere-src-6.9.3.tar.xz",
+    "SHA256": "F36D545E6681B146FD79B3EBB74EF275E88694CF81EAE8323327CAE3BFC490A1",
+    "Url": "https://download.qt.io/archive/qt/6.9/6.9.3/submodules/qttranslations-everywhere-src-6.9.3.tar.xz"
+  }
+]

@@ -1,0 +1,12 @@
+/build/
+/out/
+/.tools/
+/CMakeUserPresets.json
+/.vs/
+/.idea/
+*.user
+*.user.*
+*.log
+*.dmp
+Thumbs.db
+.DS_Store
