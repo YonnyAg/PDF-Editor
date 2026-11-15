@@ -10,11 +10,12 @@
 int main(int argc, char** argv)
 {
     QGuiApplication app(argc, argv);
-    if (argc != 3) return 1;
+    const bool store = argc == 4 && QString::fromLocal8Bit(argv[3]) == QStringLiteral("--store");
+    if (argc != 3 && !store) return 1;
     QSvgRenderer svg(QString::fromLocal8Bit(argv[1]));
     QDir output(QString::fromLocal8Bit(argv[2]));
     if (!svg.isValid() || !output.mkpath(QStringLiteral("."))) return 2;
-    const QList<int> sizes{16, 20, 24, 32, 40, 48, 64, 96, 128, 256};
+    const QList<int> sizes = store ? QList<int>{44, 50, 150, 310, 620} : QList<int>{16, 20, 24, 32, 40, 48, 64, 96, 128, 256};
     QVector<QByteArray> images;
     for (const int size : sizes) {
         QImage image(size, size, QImage::Format_ARGB32);
@@ -30,6 +31,7 @@ int main(int argc, char** argv)
         if (!image.save(&buffer, "PNG")) return 4;
         images.append(encoded);
     }
+    if (store) return 0;
     QFile icon(output.filePath(QStringLiteral("pdf-editor.ico")));
     if (!icon.open(QIODevice::WriteOnly)) return 5;
     QDataStream data(&icon);
