@@ -16,6 +16,10 @@ El instalador no requiere administrador. El ZIP debe extraerse completo antes de
 abrir `pdf_editor.exe`. Esta edición aún no tiene firma Authenticode y requiere
 más pruebas en equipos limpios; no se presenta como versión estable.
 
+**Microsoft Store:** enviado a certificación el 15 de noviembre de 2026 como
+**PDF Editor Open**, gratuito, con el editor YonnyAg. Aún no está aprobado ni
+disponible para descargar en la tienda. Consulta [el estado y el paquete MSIX](store/README.md).
+
 ## Visión
 
 Crear una aplicación que permita leer, organizar, anotar y editar documentos PDF, con procesamiento local como comportamiento predeterminado. La plataforma inicial propuesta es Windows 11, con distribución futura mediante GitHub Releases y Microsoft Store. La compatibilidad con otros sistemas se evaluará después de validar la primera versión.

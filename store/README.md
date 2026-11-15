@@ -5,6 +5,25 @@ Studio. Nombre de la ficha: **PDF Editor Open**; editor: **YonnyAg**; gratuito.
 Store ID: `9P8Z4GWSH6H8`. La identidad de `identity.json` fue leída de Partner Center,
 no es una contraseña ni un certificado. No reutilizar la identidad de PixelArt.
 
+**Estado observado el 15 de noviembre de 2026: enviado a certificación.**
+Partner Center muestra `In certification`, con preprocesamiento en curso. Precio,
+propiedades, clasificación, paquete, ficha y opciones quedaron completos.
+Se cargó y validó PDF-Editor-Open-1.0.0.0-x64.msix, con SHA256
+`A92EA748172ABF6BA20684A2FB2EFB83D37F31D3A05894ED09E432F12BF955EC`.
+La ficha en español incluye cuatro capturas reales y los enlaces de privacidad
+y soporte. IARC calculó 3+/Everyone o todas las edades según región; el propietario
+autorizó el envío de sus datos y confirmó la aceptación y mayoría de edad.
+La publicación está configurada para comenzar después de superar certificación.
+La capacidad runFullTrust continúa sujeta a aprobación de Microsoft. Todavía no
+se declara el producto aprobado ni disponible públicamente en Microsoft Store.
+
+La integridad de los 355 archivos del runtime se comprobó dentro del MSIX y pasó
+la validación MakeAppx. Las compilaciones y pruebas de GitHub Actions pasaron.
+No se completó una instalación local de este MSIX ni Windows App Certification
+Kit: el equipo no tenía habilitado el modo de desarrollador y no se cambiaron
+sus ajustes de seguridad. La validación de carga no sustituye esas pruebas ni la
+certificación. Informes locales en build/store/qa y build/store/1.0.0.0.
+
 La compilación de GitHub conserva el nombre PDF Editor y 0.1.0-preview.1. El
 primer MSIX utiliza el contador de paquete `1.0.0.0`, con revisión final 0 para
 Store; ese número no convierte la edición preliminar en una edición estable.
