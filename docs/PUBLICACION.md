@@ -1,11 +1,13 @@
 # Preparación para GitHub y Microsoft Store
 
-Actualización del 15 de noviembre de 2026: se mantiene el nombre PDF Editor y
-el autor autoriza MIT para el código propio. El paso 28 prepara instalador EXE,
-ZIP portátil, icono, licencias, fuentes y comprobaciones locales. La guía vigente
-para esos artefactos es [DESPLIEGUE.md](DESPLIEGUE.md). Las propuestas históricas
-de esta hoja no sustituyen las decisiones actuales. Aún no hay publicación remota,
-firma Authenticode ni certificación de Microsoft Store.
+Actualización del 16 de noviembre de 2026: el código propio es MIT y está publicado
+en [YonnyAg/PDF-Editor](https://github.com/YonnyAg/PDF-Editor), junto con las descargas
+externas de la versión preliminar. **PDF Editor Open está aprobado y disponible
+gratuitamente en [Microsoft Store](https://apps.microsoft.com/detail/9P8Z4GWSH6H8)**,
+con el editor YonnyAg. El instalador y ZIP externos conservan su estado sin firma
+Authenticode. Las guías vigentes son [DESPLIEGUE.md](DESPLIEGUE.md) y
+[store/README.md](../store/README.md). La investigación y listas siguientes son
+antecedentes del plan inicial, no el estado actual de publicación.
 
 Fecha de investigación: 4 de noviembre de 2026. Este documento es una hoja de trabajo; no acredita que el programa esté listo ni que haya sido aceptado por Microsoft.
 
@@ -66,4 +68,6 @@ Las [políticas de Microsoft Store](https://learn.microsoft.com/en-us/windows/ap
 | Primer lanzamiento | Lectura y organización con guardado fiable | Pruebas funcionales y visuales |
 | Cuenta Store | Elegir según titular y uso del proyecto | Flujo de Partner Center del autor |
 
-Este directorio aún no tiene un remoto de GitHub configurado ni se ha enviado ninguna aplicación a Microsoft Store.
+El remoto de este directorio es https://github.com/YonnyAg/PDF-Editor.git y la
+primera edición MSIX ya está publicada en Microsoft Store. Los datos de identidad
+y la preparación de futuras actualizaciones se documentan en ../store/README.md.

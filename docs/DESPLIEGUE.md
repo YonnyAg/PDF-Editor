@@ -67,19 +67,21 @@ prueba reinstalación y desinstalación y verifica conservación del documento y
 Rechaza iniciar si detecta una instalación previa con el mismo identificador.
 Ejecutar con PowerShell 7 desde Windows; no modifica una instalación personal.
 
-Los binarios de esta edición **no llevan firma Authenticode**. La firma de PDF es
-una función diferente. Para distribución pública falta firmar con una identidad
-real del editor, repetir QA de los artefactos firmados y regenerar sus sumas.
+Los binarios externos de GitHub **no llevan firma Authenticode**. La firma de PDF
+es una función diferente. Para ofrecer descargas externas firmadas falta firmar
+con una identidad real del editor, repetir QA y regenerar sus sumas.
 No se debe sustituir esa firma por un certificado de pruebas presentado como fiable.
 
 También falta validar en otro equipo limpio de Windows 11 x64, con rutas y escalas
 distintas, impresión, idiomas OCR y tecnologías de apoyo. La prueba local reduce
 dependencias accidentales pero no equivale a una VM limpia ni a certificación.
 
-El repositorio público es https://github.com/YonnyAg/PDF-Editor. No hay ficha de Microsoft Store. La subida
-pública debe incluir los cuatro artefactos, notas de versión, SHA256 y un contacto
-de soporte real. Microsoft Store/MSIX requiere la identidad de Partner Center;
-este instalador EXE no representa una aprobación de Store.
+El repositorio público es https://github.com/YonnyAg/PDF-Editor. La versión de
+GitHub incluye cuatro artefactos y SHA256SUMS.txt. PDF Editor Open está aprobado
+y disponible en https://apps.microsoft.com/detail/9P8Z4GWSH6H8, confirmado el
+16 de noviembre de 2026. El paquete publicado en Store es el MSIX de identidad
+YonnyAg.PDFEditorOpen; el instalador EXE externo es un artefacto diferente.
+La construcción y el historial de la edición Store están en ../store/README.md.
 
 Referencias: [despliegue Qt 6.9](https://doc.qt.io/archives/qt-6.9/windows-deployment.html),
 [fuentes Qt 6.9.3](https://download.qt.io/archive/qt/6.9/6.9.3/submodules/),

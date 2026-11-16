@@ -8,21 +8,24 @@ Proyecto de un editor PDF de escritorio de código abierto, orientado a usuarios
 C++20/Qt con PDF4QT, distribuido como proyecto open source bajo MIT para el código
 propio. Las dependencias conservan sus licencias.
 
-[Descargar instalador y versión portátil](https://github.com/YonnyAg/PDF-Editor/releases/tag/v0.1.0-preview.1)
+**[Instalar PDF Editor Open desde Microsoft Store](https://apps.microsoft.com/detail/9P8Z4GWSH6H8)**
+
+[Alternativa: instalador y ZIP portátil de GitHub](https://github.com/YonnyAg/PDF-Editor/releases/tag/v0.1.0-preview.1)
 · [Compilar desde fuentes](docs/DESARROLLO.md)
 · [Contribuir](CONTRIBUTING.md)
 
-El instalador no requiere administrador. El ZIP debe extraerse completo antes de
-abrir `pdf_editor.exe`. Esta edición aún no tiene firma Authenticode y requiere
-más pruebas en equipos limpios; no se presenta como versión estable.
+El instalador de GitHub no requiere administrador. El ZIP debe extraerse completo
+antes de abrir `pdf_editor.exe`. Los ejecutables externos de GitHub no llevan
+firma Authenticode; su estado de firma es independiente de la edición de Store.
+La aplicación conserva el alcance y las limitaciones de esta edición preliminar.
 
-**Microsoft Store:** enviado a certificación el 15 de noviembre de 2026 como
-**PDF Editor Open**, gratuito, con el editor YonnyAg. Aún no está aprobado ni
-disponible para descargar en la tienda. Consulta [el estado y el paquete MSIX](store/README.md).
+**Microsoft Store:** aprobado y disponible al 16 de noviembre de 2026 como
+**PDF Editor Open**, gratuito, con el editor YonnyAg. Consulta
+[la identidad, el estado y el paquete MSIX](store/README.md).
 
 ## Visión
 
-Crear una aplicación que permita leer, organizar, anotar y editar documentos PDF, con procesamiento local como comportamiento predeterminado. La plataforma inicial propuesta es Windows 11, con distribución futura mediante GitHub Releases y Microsoft Store. La compatibilidad con otros sistemas se evaluará después de validar la primera versión.
+Crear una aplicación que permita leer, organizar, anotar y editar documentos PDF, con procesamiento local como comportamiento predeterminado. La plataforma inicial es Windows 11 x64, con distribución mediante GitHub Releases y Microsoft Store. La compatibilidad con otros sistemas se evaluará por separado.
 
 La experiencia debe ser comprensible para usuarios sin conocimientos técnicos: acciones con nombres claros, herramientas agrupadas por tarea y controles avanzados disponibles cuando hagan falta.
 
@@ -38,7 +41,7 @@ La aplicación utiliza **C++20 + Qt 6 Widgets + PDF4QT 1.6.0.0**. Las revisiones
 | OCR local en Windows | Windows.Media.Ocr | Reconocimiento con los idiomas instalados en el sistema |
 | Firmas digitales, etapa posterior | Capacidades de PDF4QT, a validar | Firma y validación mediante certificados |
 | Compilación y dependencias | CMake + MSVC + vcpkg | Construcción reproducible para Windows |
-| Distribución a evaluar | MSIX | Paquete para Windows y Microsoft Store |
+| Distribución | MSIX, instalador EXE y ZIP | Microsoft Store y descargas de GitHub |
 
 PDF4QT declara MIT para su código y utiliza Qt y otras dependencias con condiciones propias. Su configuración consultada utiliza C++20 y CMake. Véanse [PDF4QT](https://github.com/JakubMelka/PDF4QT), [configuración de compilación](https://github.com/JakubMelka/PDF4QT/blob/master/CMakeLists.txt) y la [comparativa técnica](docs/INVESTIGACION.md).
 
@@ -318,11 +321,13 @@ Las contribuciones iniciales pueden centrarse en revisar la selección de biblio
 
 El código separa el punto de entrada (`src/app`), la interfaz (`src/ui`) y el adaptador de lectura (`src/core`). La integración de PDF4QT requiere Qt 6.9 o superior; el SDK usado es Qt 6.9.3 con Base, Svg y LinguistTools. vcpkg y sus overlays fijan las dependencias nativas. Un parche documentado corrige la compilación exclusiva del núcleo de PDF4QT. Consulta los [avisos de terceros](THIRD_PARTY_NOTICES.md). El código propio y el icono se distribuyen bajo [MIT](LICENSE).
 
-## Distribución prevista
+## Distribución
 
-GitHub alojará el código, la documentación y las versiones de la aplicación. Microsoft Store requerirá preparar y validar el paquete, configurar la identidad del editor, completar la ficha y superar la certificación. El formato MSIX es la ruta propuesta, pendiente de un ensayo de empaquetado.
+GitHub aloja el código, la documentación y las descargas del instalador y ZIP.
+La edición **PDF Editor Open** está disponible gratuitamente en Microsoft Store
+como paquete MSIX para Windows 11 x64, bajo el editor YonnyAg.
 
-Consulta el [plan de publicación](docs/PUBLICACION.md). La edición preliminar 0.1.0-preview.1 cuenta con instalador EXE por usuario y ZIP portátil. Consulta [el despliegue y sus comprobaciones](docs/DESPLIEGUE.md). El repositorio público es [YonnyAg/PDF-Editor](https://github.com/YonnyAg/PDF-Editor); no hay ficha de Microsoft Store publicada.
+Consulta [la publicación en Store](store/README.md) y [el despliegue y sus comprobaciones](docs/DESPLIEGUE.md). El repositorio público es [YonnyAg/PDF-Editor](https://github.com/YonnyAg/PDF-Editor). La aprobación de Store no cambia las funciones y limitaciones documentadas ni firma los ejecutables externos de GitHub.
 
 ## Documentación
 
@@ -331,7 +336,7 @@ Consulta el [plan de publicación](docs/PUBLICACION.md). La edición preliminar 
 - [Entorno, estructura, compilación y pruebas](docs/DESARROLLO.md)
 - [Componentes de terceros y parche de integración](THIRD_PARTY_NOTICES.md)
 
-Última revisión documental del 15 de noviembre de 2026.
+Última revisión documental del 16 de noviembre de 2026.
 
 
 

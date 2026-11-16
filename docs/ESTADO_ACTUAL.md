@@ -1,12 +1,21 @@
-# Estado al 15 de noviembre de 2026
+# Estado al 16 de noviembre de 2026
+
+**PDF Editor Open está aprobado y disponible gratuitamente en Microsoft Store**,
+con el editor YonnyAg y Store ID 9P8Z4GWSH6H8. Se comprobó la ficha pública:
+https://apps.microsoft.com/detail/9P8Z4GWSH6H8. El código, la documentación y las
+descargas externas están publicados en https://github.com/YonnyAg/PDF-Editor.
+La licencia del código propio sigue siendo MIT. La publicación de Store no cambia
+las limitaciones funcionales ni la firma de los ejecutables externos de GitHub.
+Identidad, empaquetado e historial de publicación: store/README.md.
 
 El paso 28 prepara PDF Editor 0.1.0-preview.1 con icono, metadatos, MIT para el
 código propio, instalador EXE por usuario, ZIP portátil y paquetes de fuentes.
 Los artefactos y sus sumas están en build/releases/0.1.0-preview.1. La versión
 actual está en build/paso28/Release y Debug. Pasaron 34 suites y 35 flujos nativos;
 la prueba de distribución se registra en build/paso28/qa/distribution-complete.
-Consulta PASO_28.md y DESPLIEGUE.md. Falta firmar el código, verificar otro equipo
-limpio y completar la publicación externa; todavía no se declara edición estable.
+Consulta PASO_28.md y DESPLIEGUE.md. Quedan pendientes la firma Authenticode de las
+descargas externas y ampliar las pruebas en otros equipos limpios. La publicación
+en GitHub y Store está completada; todavía no se declara edición estable.
 
 ## Antecedente: paso 27
 

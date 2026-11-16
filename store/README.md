@@ -5,21 +5,27 @@ Studio. Nombre de la ficha: **PDF Editor Open**; editor: **YonnyAg**; gratuito.
 Store ID: `9P8Z4GWSH6H8`. La identidad de `identity.json` fue leída de Partner Center,
 no es una contraseña ni un certificado. No reutilizar la identidad de PixelArt.
 
-**Estado observado el 15 de noviembre de 2026: enviado a certificación.**
-Partner Center muestra `In certification`, con preprocesamiento en curso. Precio,
-propiedades, clasificación, paquete, ficha y opciones quedaron completos.
+**Estado confirmado el 16 de noviembre de 2026: aprobado y disponible en Microsoft Store.**
+
+**[Instalar PDF Editor Open desde Microsoft Store](https://apps.microsoft.com/detail/9P8Z4GWSH6H8)**
+
+El propietario confirmó el estado «En Microsoft Store» en Partner Center y se
+comprobó la ficha pública, con el editor YonnyAg y el botón de descarga gratuita.
+El envío inicial se realizó el 15 de noviembre. Precio, propiedades, clasificación,
+paquete, ficha y opciones quedaron completos.
 Se cargó y validó PDF-Editor-Open-1.0.0.0-x64.msix, con SHA256
 `A92EA748172ABF6BA20684A2FB2EFB83D37F31D3A05894ED09E432F12BF955EC`.
 La ficha en español incluye cuatro capturas reales y los enlaces de privacidad
 y soporte. IARC calculó 3+/Everyone o todas las edades según región; el propietario
 autorizó el envío de sus datos y confirmó la aceptación y mayoría de edad.
-La publicación está configurada para comenzar después de superar certificación.
-La capacidad runFullTrust continúa sujeta a aprobación de Microsoft. Todavía no
-se declara el producto aprobado ni disponible públicamente en Microsoft Store.
+El envío superó la certificación y la publicación automática quedó completada.
+La aplicación sigue siendo una edición preliminar con los límites funcionales
+documentados. La aprobación no acredita compatibilidad universal de PDFs ni una
+auditoría independiente del código.
 
 La integridad de los 355 archivos del runtime se comprobó dentro del MSIX y pasó
 la validación MakeAppx. Las compilaciones y pruebas de GitHub Actions pasaron.
-No se completó una instalación local de este MSIX ni Windows App Certification
+Antes del envío no se completó una instalación local de este MSIX ni Windows App Certification
 Kit: el equipo no tenía habilitado el modo de desarrollador y no se cambiaron
 sus ajustes de seguridad. La validación de carga no sustituye esas pruebas ni la
 certificación. Informes locales en build/store/qa y build/store/1.0.0.0.
@@ -68,7 +74,8 @@ Validar instalación y activación del MSIX en Windows, además del esquema Make
 y revisar el informe de Windows App Certification Kit antes del envío final.
 Los cuestionarios de edad y acuerdos deben reflejar el comportamiento de este
 producto; el propietario revisa las declaraciones legales que exija Partner Center.
-La reserva o la carga del paquete no equivale a aprobación ni publicación.
+Para futuras actualizaciones, la reserva o la carga del paquete por sí solas no
+equivalen a aprobación ni publicación.
 
 Referencias: [requisitos MSIX](https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/app-package-requirements),
 [manifiesto Win32](https://learn.microsoft.com/en-us/windows/msix/desktop/desktop-to-uwp-manual-conversion),
